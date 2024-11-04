@@ -288,33 +288,73 @@ body {
     width: 100%;
     height: 100%;
     background: rgba(0, 0, 0, 0.8);
-    color: #ffd700;
+    color: #ffd700; /* Gold color for text */
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    font-size: 2em;
+    font-size: 2em; /* Base font size */
     text-align: center;
-    opacity: 0;
-    pointer-events: none;
-    transition: opacity 0.5s ease;
+    opacity: 0; /* Initially hidden */
+    pointer-events: none; /* Prevent interactions when hidden */
+    transition: opacity 0.5s ease; /* Smooth transition for visibility */
 }
 
 .congratulations-overlay.active {
-    opacity: 1;
-    pointer-events: all;
+    opacity: 1; /* Fully visible when active */
+    pointer-events: all; /* Allow interactions when visible */
 }
 
 .congratulations-overlay h2 {
-    font-size: 2.5em;
-    margin-bottom: 10px;
+    font-size: 2.5em; /* Heading font size */
+    margin-bottom: 10px; /* Space below heading */
 }
 
 .congratulations-overlay p {
-    font-size: 1.5em;
-    max-width: 80%;
-    color: #ffffff;
+    font-size: 1.5em; /* Paragraph font size */
+    max-width: 80%; /* Limit paragraph width */
+    color: #ffffff; /* White color for text */
 }
+
+/* Responsive adjustments */
+@media (max-width: 600px) {
+    .congratulations-overlay {
+        font-size: 1.5em; /* Smaller base font size for mobile */
+    }
+
+    .congratulations-overlay h2 {
+        font-size: 2em; /* Smaller heading size */
+    }
+
+    .congratulations-overlay p {
+        font-size: 1.2em; /* Smaller paragraph size */
+    }
+}
+
+@media (min-width: 301px) and (max-width: 500px) {
+    .congratulations-overlay h2 {
+        font-size: 1.8em; /* Adjusted font size for medium screens */
+    }
+
+    .congratulations-overlay p {
+        font-size: 1em; /* Adjusted font size for medium screens */
+    }
+}
+
+@media (min-width: 501px) and (max-width: 900px) {
+    .congratulations-overlay {
+        font-size: 1.8em; /* Medium base font size for tablets */
+    }
+
+    .congratulations-overlay h2 {
+        font-size: 2.2em; /* Medium heading size */
+    }
+
+    .congratulations-overlay p {
+        font-size: 1.3em; /* Medium paragraph size */
+    }
+}
+
 
 .firework-particle {
     position: absolute;
