@@ -13,6 +13,9 @@ let diyasLit = 0;
 let crackersBurst = 0;
 let rangoliCompleted = false;
 
+// Audio element for cracker sound
+const crackerSound = new Audio('sounds/crackers.mp3'); 
+
 // Start Game
 startButton.addEventListener('click', () => {
     points = 0;
@@ -40,7 +43,7 @@ diyas.forEach(diya => {
     });
 });
 
-// Bursting Crackers
+// Bursting Crackers with Sound
 crackers.forEach(cracker => {
     cracker.addEventListener('click', () => {
         if (!cracker.classList.contains('burst')) {
@@ -48,7 +51,12 @@ crackers.forEach(cracker => {
             crackersBurst += 1;
             points += 15;
             updatePointsDisplay(); // Update points display
-            createFireworks();
+            
+            // Play the cracker sound
+            crackerSound.currentTime = 0; // Reset sound to start
+            crackerSound.play();
+
+            createFireworks(); // Trigger fireworks animation
             checkCompletion();
         }
     });
